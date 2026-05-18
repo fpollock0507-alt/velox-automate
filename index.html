@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Velox Automate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{background:#060810;font-family:'Space Grotesk',sans-serif;padding-top:52px;}
+  #root{min-height:100vh;}
+  .vlx-nav{position:fixed;top:0;left:0;right:0;z-index:99999;padding:0 28px;height:52px;background:rgba(6,8,16,0.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(99,179,255,0.12);display:flex;align-items:center;justify-content:space-between;gap:16px;font-family:'Space Grotesk',system-ui,sans-serif;}
+  .vlx-nav-logo{display:flex;align-items:center;gap:9px;text-decoration:none;flex-shrink:0;}
+  .vlx-nav-logo-icon{width:28px;height:28px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);border-radius:7px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff;}
+  .vlx-nav-logo-text{font-weight:700;font-size:15px;background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+  .vlx-nav-links{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0;flex:1;justify-content:center;}
+  .vlx-nav-links a{color:rgba(168,180,204,0.85);font-size:13px;text-decoration:none;padding:5px 12px;border-radius:7px;border:1px solid transparent;transition:all 0.18s;white-space:nowrap;}
+  .vlx-nav-links a:hover{color:#f0f4ff;background:rgba(59,130,246,0.08);border-color:rgba(59,130,246,0.18);}
+  .vlx-nav-links a.vlx-active{color:#60a5fa;background:rgba(59,130,246,0.12);border-color:rgba(59,130,246,0.25);}
+  .vlx-nav-cta{background:linear-gradient(135deg,#3b82f6,#8b5cf6)!important;color:#fff!important;border:none!important;font-weight:600!important;padding:7px 16px!important;border-radius:8px!important;}
+  @media(max-width:640px){.vlx-nav-links{display:none;}.vlx-nav{padding:0 16px;}}
+  </style>
+</head>
+<body>
+  <nav class="vlx-nav" data-page="automate">
+    <a href="https://fpollock0507-alt.github.io/velox-ai-/" class="vlx-nav-logo">
+      <div class="vlx-nav-logo-icon">V</div>
+      <span class="vlx-nav-logo-text">Velox AI</span>
+    </a>
+    <ul class="vlx-nav-links">
+      <li><a href="https://fpollock0507-alt.github.io/velox-ai-/" data-match="portfolio">Home</a></li>
+      <li><a href="https://fpollock0507-alt.github.io/velox-ai-/chatbot.html" data-match="chatbot">Chatbot Demo</a></li>
+      <li><a href="https://fpollock0507-alt.github.io/velox-audit/" data-match="audit">Business Audit</a></li>
+      <li><a href="https://fpollock0507-alt.github.io/velox-automate/" data-match="automate">Automate</a></li>
+    </ul>
+    <a href="mailto:Finlay.Veloxai@outlook.com?subject=Book a Demo — Velox AI" class="vlx-nav-links vlx-nav-cta">📅 Book free demo</a>
+  </nav>
+  <script>
+  (function(){
+    var page=document.querySelector('.vlx-nav').getAttribute('data-page');
+    document.querySelectorAll('.vlx-nav-links a[data-match]').forEach(function(a){
+      if(a.getAttribute('data-match')===page)a.classList.add('vlx-active');
+    });
+  })();
+  </script>
+  <div id="root"></div>
+  <script type="module" src="/velox-automate/src/main.jsx"></script>
+</body>
+</html>
